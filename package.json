@@ -1,0 +1,37 @@
+{
+  "name": "misstype-tourist-online",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "nodecg": {
+    "compatibleRange": "~1.7.0",
+    "dashboardPanels": [
+      {
+        "name": "caption",
+        "title": "キャプション",
+        "width": 2,
+        "headerColor": "#2d4e8a",
+        "file": "caption.html"
+      },
+      {
+        "name": "scores",
+        "title": "スコア",
+        "width": 2,
+        "headerColor": "#2d4e8a",
+        "file": "scores.html"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "main.html",
+        "width": 1920,
+        "height": 1080
+      }
+    ]
+  }
+}

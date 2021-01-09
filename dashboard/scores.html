@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./scores.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./scores.js"></script>
+</head>
+<body>
+  競技ごとに点数を増減して、競技が終わったら「適用」ボタンで集計してください
+  <div id="scoreboard">
+    <div v-for="member in members" :key="member.name" class="member">
+      {{ member.name }}: {{ member.score }} + 
+      <input v-model="member.appendedScore" type="number" maxlength="3">
+    </div>
+    <input type="button" value="適用" @click="applyAppendedScore">
+  </div>
+</body>
+</html>

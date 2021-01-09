@@ -1,0 +1,15 @@
+#scoreboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.member {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.member input {
+  width: 3em;
+  margin-left: 1em;
+}

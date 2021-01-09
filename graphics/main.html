@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Misstype Tour Online</title>
+  <link rel="stylesheet" href="./main.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./main.js" defer></script>
+</head>
+<body>
+  <div id="video"></div>
+  <div id="side">
+    <div v-for="member in members" class="member">
+      <span>{{ member.name }}</span>
+      <span class="score">{{ member.score }}点</span>
+    </div>
+  </div>
+  <div id="bottom">
+    <span>{{ caption }}</span>
+  </div>
+</body>
+</html>
