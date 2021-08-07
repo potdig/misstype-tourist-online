@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "nodecg": {
-    "compatibleRange": "~1.7.0",
+    "compatibleRange": "^1.8.0",
     "dashboardPanels": [
       {
         "name": "caption",

@@ -46,7 +46,8 @@ const observer = new MutationObserver(mutations => {
     el: '#scoreboard',
     data: function () {
       return {
-        members: []
+        members: [],
+        newName: ""
       }
     },
     methods: {
@@ -56,6 +57,17 @@ const observer = new MutationObserver(mutations => {
           member.sumScore()
         });
 
+        replicant.value = this.members
+      },
+      add() {
+        if (this.newName.length > 0) {
+          this.members.push(new Member(this.newName, 0, 0))
+        }
+        this.newName = ""
+        replicant.value = this.members
+      },
+      remove(removal) {
+        this.members = this.members.filter(member => member.name !== removal.name)
         replicant.value = this.members
       }
     }
