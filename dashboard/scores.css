@@ -3,10 +3,6 @@
   flex-direction: column;
 }
 
-#add-member {
-  margin-top: 1em;
-}
-
 .member {
   display: flex;
   flex-direction: row;
@@ -16,4 +12,12 @@
 .member input {
   width: 3em;
   margin-left: 1em;
+}
+
+.remove-member {
+  margin-left: 1em;
+}
+
+#add-member {
+  margin-top: 1em;
 }

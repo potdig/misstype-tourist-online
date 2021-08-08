@@ -21,7 +21,7 @@
       {
         "name": "scores",
         "title": "スコア",
-        "width": 2,
+        "width": 3,
         "headerColor": "#2d4e8a",
         "file": "scores.html"
       }

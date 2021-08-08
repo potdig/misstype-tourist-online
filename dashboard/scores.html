@@ -14,7 +14,7 @@
     <div v-for="member in members" :key="member.name" class="member">
       {{ member.name }}: {{ member.score }} + 
       <input v-model="member.appendedScore" type="number" maxlength="3">
-      <button @click="remove(member)">削除</button>
+      <button class="remove-member" @click="remove(member)">削除</button>
     </div>
     <input type="button" value="適用" @click="applyAppendedScore">
     <div id="add-member">
