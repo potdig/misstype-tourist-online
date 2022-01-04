@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="./scores.css">
-  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-  <script src="./scores.js"></script>
-</head>
-<body>
-  競技ごとに点数を増減して、競技が終わったら「適用」ボタンで集計してください<br>
-  <div id="scoreboard">
-    <div v-for="member in members" :key="member.name" class="member">
-      {{ member.name }}: {{ member.score }} + 
-      <input v-model="member.appendedScore" type="number" maxlength="3">
-      <button class="remove-member" @click="remove(member)">削除</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./scores.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="./scores.js"></script>
+  </head>
+  <body>
+    競技ごとに点数を増減して、競技が終わったら「適用」ボタンで集計してください<br />
+    <div id="scoreboard">
+      <div v-for="member in members" :key="member.name" class="member">
+        <span class="remove-member" @click="remove(member)">×</span>
+        {{ member.name }}: {{ member.score }} +
+        <input v-model="member.appendedScore" type="number" maxlength="3" />
+      </div>
+      <input type="button" value="適用" @click="applyAppendedScore" />
+      <div id="add-member">
+        <label for="new-name">新メンバー追加</label>
+        <input id="new-name" v-model="newName" type="text" />
+        <button @click="add">追加</button>
+      </div>
     </div>
-    <input type="button" value="適用" @click="applyAppendedScore">
-    <div id="add-member">
-      <label for="new-name">新メンバー追加</label>
-      <input id="new-name" v-model="newName" type="text">
-      <button @click="add">追加</button>
-    </div>
-  </div>
-</body>
+  </body>
 </html>
