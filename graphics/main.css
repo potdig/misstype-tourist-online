@@ -10,6 +10,30 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+.border-2 {
+  text-shadow:
+       2px  2px 0px #000000,
+      -2px  2px 0px #000000,
+       2px -2px 0px #000000,
+      -2px -2px 0px #000000,
+       2px  0px 0px #000000,
+       0px  2px 0px #000000,
+      -2px  0px 0px #000000,
+       0px -2px 0px #000000;
+}
+
+.border-3 {
+  text-shadow:
+       3px  3px 0px #000000,
+      -3px  3px 0px #000000,
+       3px -3px 0px #000000,
+      -3px -3px 0px #000000,
+       3px  0px 0px #000000,
+       0px  3px 0px #000000,
+      -3px  0px 0px #000000,
+       0px -3px 0px #000000;
+}
+
 #video {
   background-color: rgba(0, 0, 0, 20%);
   width: calc(1920px * 0.9);
@@ -21,15 +45,6 @@ body {
   width: calc(1920px * 0.08);
   padding-top: 1em;
   margin-left: calc(1920px * 0.01);
-  text-shadow: 
-       2px  2px 0px #000000,
-      -2px  2px 0px #000000,
-       2px -2px 0px #000000,
-      -2px -2px 0px #000000,
-       2px  0px 0px #000000,
-       0px  2px 0px #000000,
-      -2px  0px 0px #000000,
-       0px -2px 0px #000000;        /* 文字の影 */
 }
 
 .member {
@@ -44,17 +59,21 @@ body {
 #bottom {
   height: calc(1080px * 0.1);
   display: flex;
-  align-content: center;
-  font-size: 4.2em;
+  flex-direction: column;
+  justify-content: center;
   font-weight: bold;
-  margin-left: 0.5em;
-  text-shadow: 
-       3px  3px 0px #000000,
-      -3px  3px 0px #000000,
-       3px -3px 0px #000000,
-      -3px -3px 0px #000000,
-       3px  0px 0px #000000,
-       0px  3px 0px #000000,
-      -3px  0px 0px #000000,
-       0px -3px 0px #000000;        /* 文字の影 */
+  margin-left: 1em;
+}
+
+#bottom p {
+  margin: 0;
+}
+
+#main-caption {
+  font-size: 2.8em;
+  line-height: 1.2em;
+}
+
+#sub-caption {
+  font-size: 1.6em;
 }

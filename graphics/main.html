@@ -12,12 +12,13 @@
   <div id="video"></div>
   <div id="side">
     <div v-for="member in members" class="member">
-      <span>{{ member.name }}</span>
-      <span class="score">{{ member.score }}点</span>
+      <span class="border-2">{{ member.name }}</span>
+      <span class="score border-2">{{ member.score }}点</span>
     </div>
   </div>
   <div id="bottom">
-    <span>{{ caption }}</span>
+    <p id="main-caption" class="border-3">{{ caption.main }}</span>
+    <p id="sub-caption" class="border-2">{{ caption.sub}}</span>
   </div>
 </body>
 </html>
