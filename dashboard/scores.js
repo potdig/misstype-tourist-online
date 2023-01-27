@@ -1,8 +1,9 @@
 class Member {
-  constructor(name, score, appendedScore) {
+  constructor(name, score, appendedScore, isGuest) {
     this.name = name
     this.score = score
     this.appendedScore = parseInt(appendedScore)
+    this.isGuest = isGuest
   }
 
   sumScore() {
@@ -13,18 +14,18 @@ class Member {
 
 const replicant = nodecg.Replicant("members", {
   defaultValue: [
-    new Member("ルゼ", 0, 0),
-    new Member("potdig", 0, 0),
-    new Member("かまたり", 0, 0),
-    new Member("まさお", 0, 0),
-    new Member("zrk", 0, 0),
-    new Member("daisan", 0, 0),
-    new Member("あおお", 0, 0),
-    new Member("Cosith", 0, 0),
-    new Member("Morph", 0, 0),
-    new Member("緋藤レイル", 0, 0),
-    new Member("たばた", 0, 0),
-    new Member("BACO", 0, 0)
+    new Member("ルゼ", 0, 0, false),
+    new Member("potdig", 0, 0, false),
+    new Member("かまたり", 0, 0, false),
+    new Member("まさお", 0, 0, false),
+    new Member("zrk", 0, 0, false),
+    new Member("daisan", 0, 0, false),
+    new Member("あおお", 0, 0, false),
+    new Member("Cosith", 0, 0, false),
+    new Member("Morph", 0, 0, false),
+    new Member("緋藤レイル", 0, 0, false),
+    new Member("たばた", 0, 0, false),
+    new Member("BACO", 0, 0, false)
   ]
 })
 
@@ -47,7 +48,8 @@ const observer = new MutationObserver(mutations => {
     data: function () {
       return {
         members: [],
-        newName: ""
+        newName: "",
+        isGuest: false
       }
     },
     methods: {
@@ -61,9 +63,10 @@ const observer = new MutationObserver(mutations => {
       },
       add() {
         if (this.newName.length > 0) {
-          this.members.push(new Member(this.newName, 0, 0))
+          this.members.push(new Member(this.newName, 0, 0, this.isGuest))
         }
         this.newName = ""
+        this.isGuest = false
         replicant.value = this.members
       },
       remove(removal) {
@@ -76,7 +79,7 @@ const observer = new MutationObserver(mutations => {
   replicant.on('change', (newMembers) => {
     scoreBoard.members = []
     newMembers.forEach(member => {
-      scoreBoard.members.push(new Member(member.name, member.score, member.appendedScore))
+      scoreBoard.members.push(new Member(member.name, member.score, member.appendedScore, member.isGuest))
     })
   })
 

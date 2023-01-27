@@ -22,7 +22,8 @@ memberReplicant.on('change', newMembers => {
   newMembers.forEach(member => {
     sideBar.members.push({
       name: member.name,
-      score: member.score
+      score: member.score,
+      isGuest: member.isGuest
     })
   })
 })

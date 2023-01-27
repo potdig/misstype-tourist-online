@@ -52,6 +52,10 @@ body {
   flex-direction: column;
 }
 
+.member.guest {
+  color: lightskyblue;
+}
+
 .score {
   align-self: flex-end;
 }

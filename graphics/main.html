@@ -11,7 +11,7 @@
 <body>
   <div id="video"></div>
   <div id="side">
-    <div v-for="member in members" class="member">
+    <div v-for="member in members" class="member" :class="{ guest: member.isGuest }">
       <span class="border-2">{{ member.name }}</span>
       <span class="score border-2">{{ member.score }}点</span>
     </div>

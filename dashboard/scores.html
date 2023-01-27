@@ -13,13 +13,18 @@
     <div id="scoreboard">
       <div v-for="member in members" :key="member.name" class="member">
         <span class="remove-member" @click="remove(member)">×</span>
-        {{ member.name }}: {{ member.score }} +
+        {{ member.name }}{{ member.isGuest ? "（ゲスト）" : "" }}: {{ member.score }} +
         <input v-model="member.appendedScore" type="number" maxlength="3" />
       </div>
       <input type="button" value="適用" @click="applyAppendedScore" />
       <div id="add-member">
         <label for="new-name">新メンバー追加</label>
+        <br>
         <input id="new-name" v-model="newName" type="text" />
+        <br>
+        <input id="is-guest" v-model="isGuest" type="checkbox" />
+        <label for="new-name">ゲスト</label>
+        <br>
         <button @click="add">追加</button>
       </div>
     </div>
